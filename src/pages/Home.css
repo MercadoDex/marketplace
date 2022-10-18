@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 .link {
   font-size: 18px;
   margin:5%;
@@ -8,24 +10,15 @@
   text-decoration: underline;
 }
 
-.carousel {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.carousel-img {
-  min-width: 100vw;
-  height: 750px;
-  object-fit: cover;
-}
-
 .card {
-  width:450px;
-  height:530px;
+  width: 300px;
+  height: 420px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 20px;
 }
 
-.card-content {
+/* .card-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -36,20 +29,64 @@
 
 .card-category {
   width: 50%;
+} */
+
+.cardsContainer
+{
+  background-color: #F0F0F0;
+  height: 100vh;
 }
 
-.cards {
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-  position: absolute;
-  left: 0;
-  top: 450px;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 100vw;
-  gap: 15px; 
+.titleCardsSection
+{
+  font-size: 28px;
+  margin-left: calc(100vw - 1740px);
+  padding-top: 12px;
+}
 
+.cards 
+{
+  display: flex;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.cardTitle
+{
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+.cardImg
+{
+  width: 160px;
+  margin-left: 20%;
+}
+
+.dateAnnounce
+{
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 12px;
+  color: #000000;
+  opacity: 0.3;
+}
+
+.descProduct
+{
+  font-size: 14px;
+}
+
+.priceProduct
+{
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 20px;
+  color: #000000;
+
+  display: block;
+  text-align: center;
+  margin-top: 8px;
 }
 
 .results-header {

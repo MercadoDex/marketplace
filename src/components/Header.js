@@ -34,7 +34,7 @@ const Header = () => {
         ghost={false}
         extra={[
           <>
-            <img src={MdLogo} className="logo"></img>
+            <img src={MdLogo} className="logo" ></img>
             <Search
               size="large"
               placeholder="Estou procurando..."

@@ -1,80 +1,215 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import "./Home.css";
-import { Carousel, Card } from 'antd';
-import Carousel1 from "../images/carousel1.png";
-import Carousel2 from "../images/carousel2.png";
-import Carousel3 from "../images/carousel3.png";
-import Comics from "../images/comics.png";
-import ArtemisFowl from "../images/ArtemisFowl.png";
-import MobyDick from "../images/MobyDick.png";
-import Adventure from "../images/adventure.png";
-import Dictionaries from "../images/dictionaries.png";
-import Fantasy from "../images/fantasy.png";
-import Horror from "../images/horror.png";
+import { Card } from "antd";
+import videoCard from "../images/videocard4090.png";
 
-const carousel = [Carousel1,Carousel2,Carousel3];
-const catCard = [Adventure, Fantasy,Horror,Dictionaries];
 const Home = () => {
+  return (
+    <>
+      <div className="container">
+        <Header />
 
-return(
-  <>
-  <div className="container">
-    <Header/>
-    <Carousel autoplay className="carousel">
-    {carousel.map((e) => {
-        return <img src={e} className="carousel-img" alt="carousel"></img>;
-    })}
-    </Carousel>
-    <div className="cards">  
-      <Card className="card">
-      <h1>Browse Comics</h1>
-        <img src={Comics} alt="Comics Category" className="card-content"></img>
-        <br />
-        <Link to="/categories" state={"Comics"} className="link">
-          Shop Now
-        </Link>
-      </Card>
-      <Card className="card">
-        <h1>Artemis Fowl</h1>
-        <img src={ArtemisFowl} alt="Artemis Fowl" className="card-content"></img>
-        <br />
-        <Link to="/" className="link">
-          View Product
-        </Link>
-      </Card>
-      <Card className="card">
-        <h1>Moby Dick</h1>
-        <img src={MobyDick} alt="Moby Dick" className="card-content"></img>
-        <br />
-        <Link to="/" className="link">
-          View Product
-        </Link>
-      </Card>
-      <Card className="card">
-        <h1>Shop By Category</h1>
-        <div className="card-content">
-          {catCard.map((e) => {
-            return (
+        <div className="cardsContainer">
+
+          <h2 className="titleCardsSection">Ofertas da Semana</h2>
+          <div className="cards">
+
+
+            <Card className="card">
+              <h1 className="cardTitle">RTX 4090 GALAX</h1>
               <img
-                src={e}
-                alt="category"
-                className="card-category"
-                onClick={() => console.log("beauty")}
+                src={videoCard}
+                alt="Video Card 4090 Card"
+                className="cardImg"
               ></img>
-            );
-          })}
-          <br />
-          <Link to="/" className="link">
-            Shop All
-          </Link>
+              <span className="dateAnnounce">
+              14/10/22 - 16h00
+              </span>
+
+              <br />
+
+              <span className="descProduct">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </span>
+
+              <span className="priceProduct">
+              1 MATIC ~= R$0.3
+              </span>
+
+
+
+              {/* <br /> */}
+              {/* <Link to="/product" state={"Comics"} className="link">
+                Shop Now
+              </Link> */}
+            </Card>
+
+            <Card className="card">
+              <h1 className="cardTitle">RTX 4090 GALAX</h1>
+              <img
+                src={videoCard}
+                alt="Video Card 4090 Card"
+                className="cardImg"
+              ></img>
+              <span className="dateAnnounce">
+              14/10/22 - 16h00
+              </span>
+
+              <br />
+
+              <span className="descProduct">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </span>
+
+              <span className="priceProduct">
+              1 MATIC ~= R$0.3
+              </span>
+
+
+
+              {/* <br /> */}
+              {/* <Link to="/product" state={"Comics"} className="link">
+                Shop Now
+              </Link> */}
+            </Card>
+
+            <Card className="card">
+              <h1 className="cardTitle">RTX 4090 GALAX</h1>
+              <img
+                src={videoCard}
+                alt="Video Card 4090 Card"
+                className="cardImg"
+              ></img>
+              <span className="dateAnnounce">
+              14/10/22 - 16h00
+              </span>
+
+              <br />
+
+              <span className="descProduct">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </span>
+
+              <span className="priceProduct">
+              1 MATIC ~= R$0.3
+              </span>
+
+
+
+              {/* <br /> */}
+              {/* <Link to="/product" state={"Comics"} className="link">
+                Shop Now
+              </Link> */}
+            </Card>
+
+            <Card className="card">
+              <h1 className="cardTitle">RTX 4090 GALAX</h1>
+              <img
+                src={videoCard}
+                alt="Video Card 4090 Card"
+                className="cardImg"
+              ></img>
+              <span className="dateAnnounce">
+              14/10/22 - 16h00
+              </span>
+
+              <br />
+
+              <span className="descProduct">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </span>
+
+              <span className="priceProduct">
+              1 MATIC ~= R$0.3
+              </span>
+
+
+
+              {/* <br /> */}
+              {/* <Link to="/product" state={"Comics"} className="link">
+                Shop Now
+              </Link> */}
+            </Card>
+
+            <Card className="card">
+              <h1 className="cardTitle">RTX 4090 GALAX</h1>
+              <img
+                src={videoCard}
+                alt="Video Card 4090 Card"
+                className="cardImg"
+              ></img>
+              <span className="dateAnnounce">
+              14/10/22 - 16h00
+              </span>
+
+              <br />
+
+              <span className="descProduct">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+              </span>
+
+              <span className="priceProduct">
+              1 MATIC ~= R$0.3
+              </span>
+
+
+
+              {/* <br /> */}
+              {/* <Link to="/product" state={"Comics"} className="link">
+                Shop Now
+              </Link> */}
+            </Card>
+
+          </div>
+          
+          {/* <Card className="card">
+            <h1>Artemis Fowl</h1>
+            <img
+              src={ArtemisFowl}
+              alt="Artemis Fowl"
+              className="card-content"
+            ></img>
+            <br />
+            <Link to="/" className="link">
+              View Product
+            </Link>
+          </Card>
+
+          <Card className="card">
+            <h1>Moby Dick</h1>
+            <img src={MobyDick} alt="Moby Dick" className="card-content"></img>
+            <br />
+            <Link to="/" className="link">
+              View Product
+            </Link>
+          </Card>
+
+          <Card className="card">
+            <h1>Shop By Category</h1>
+            <div className="card-content">
+              {catCard.map((e) => {
+                return (
+                  <img
+                    src={e}
+                    alt="category"
+                    className="card-category"
+                    onClick={() => console.log("beauty")}
+                  ></img>
+                );
+              })}
+              <br />
+              <Link to="/" className="link">
+                Shop All
+              </Link>
+            </div>
+          </Card> */}
         </div>
-      </Card>
-    </div>
-  </div>
-  </>
-)
-}
+
+      </div>
+    </>
+  );
+};
 
 export default Home;
