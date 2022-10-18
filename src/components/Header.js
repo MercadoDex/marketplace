@@ -31,12 +31,7 @@ const Header = () => {
   return (
     <div className="site-page-header-ghost-wrapper">
       <PageHeader
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-        ghost={true}
+        ghost={false}
         extra={[
           <>
             <img src={MdLogo} className="logo"></img>
@@ -50,14 +45,14 @@ const Header = () => {
             <Button
               key="1"
               type="text"
-              icon={<UserOutlined className="personData" />}
+              icon={<UserOutlined className="header-buttons" />}
             ></Button>
 
             <Tooltip title={account ? (<span>{account.slice(0, 8)}...</span>) : "Not logged yet"}>
               <Button
                 key="2"
                 type="text"
-                icon={<WalletOutlined className="walletLogin" />}
+                icon={<WalletOutlined className="header-buttons" />}
                 onClick={() => authenticate()}
               ></Button>
             </Tooltip>

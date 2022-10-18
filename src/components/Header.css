@@ -1,10 +1,23 @@
-.site-page-subheader-ghost-wrapper {
-  background-color: white;
-  font-weight: 600;
-  padding: 10px;
-  text-align: center;
+@import '~antd/dist/antd.css';
+
+.ant-page-header {
+  background-color: #FFF159;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.ant-page-header-heading-extra
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  height: 90px;
+  margin-right: 10px;
+}
 
 .categories{
   color: black;
@@ -16,37 +29,14 @@
   color:#adadad;
 }
 
-.logo{
-  height: 90px;
-  margin-right: 10px;
-}
-
-.header-buttons{
-  font-size: 32px;
-}
-
-.header-buttons:hover{
-  cursor: pointer;
-  color: #adadad;
-}
-/* App Css*/
-@import '~antd/dist/antd.css';
-
-.ant-page-header {
-  background-color: #FFF159;
-}
-
-.ant-page-header-heading-extra
-{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .searchBar {
   margin-top: 4px;
   width: calc(100vw - 750px);
   margin-right: 12px;
+}
+
+.header-buttons{
+  font-size: 32px;
 }
 
 .ant-input-search-button{
@@ -60,33 +50,11 @@
   cursor: pointer;
 }
 
-.login{
-  padding: 3px 30px;
-  font-weight: bold;
-  background-color: #fdb13f ;
-  border-color: #fdb13f;
-  border: solid 2px #fdb13f;
-  color: white;
-}
+/* Categories part */
 
-.login:hover{
-  background-color: #FF9900;
-  border: solid 2px white;
-  color: white;
-}
-
-.login:focus{
-  background-color: #FF9900;
-  border: solid 2px white;
-  color: white;
-}
-
-.personData
-{
-  font-size: 32px
-}
-
-.walletLogin
-{
-  font-size: 32px
+.site-page-subheader-ghost-wrapper {
+  background-color: white;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
 }
