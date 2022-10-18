@@ -12,12 +12,18 @@ import {
 
 const { Search } = Input;
 const categories = [
-  "Comics",
-  "Dictionaries",
-  "Novels",
-  "Fantasy",
-  "Horror",
-  "Adventure",
+  "Mais vendidos",
+  "Livros",
+  "Eletrônicos",
+  "Computadores",
+  "Games",
+  "Brinquedos",
+  "Automotivo",
+  "Petshop",
+  "Casa",
+  "Eletrodomesticos",
+  "Usados",
+
 ];
 
 const Header = () => {
@@ -66,10 +72,10 @@ const Header = () => {
       ></PageHeader>
 
       <div className="site-page-subheader-ghost-wrapper">
-        <Space size={"middle"}>
-          <Space size={"small"} style={{ fontWeight: "bold" }}>
+        <Space size={"large"}>
+          <Space style={{ fontWeight: "600", fontSize: "18px", cursor: "pointer" }}>
             <MenuOutlined />
-            Categories
+            Categorias
           </Space>
           {categories.map((e) => {
             return (

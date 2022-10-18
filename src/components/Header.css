@@ -1,21 +1,10 @@
 .site-page-subheader-ghost-wrapper {
   background-color: white;
-  color: white;
-  font-weight: 400;
-  padding: 20px ;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
 }
 
-/* .site-page-header
-{
-  display: flex;
-  align-items: center;
-} */
-
-/* .searchBar
-{
-  max-width: 60vw;
-  margin-top: 1.8%;
-} */
 
 .categories{
   color: black;
@@ -91,7 +80,6 @@
   border: solid 2px white;
   color: white;
 }
-
 
 .personData
 {
