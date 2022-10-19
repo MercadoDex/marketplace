@@ -1,0 +1,22 @@
+.footer
+{
+    text-align: center;
+    background-color: #FFF159;
+}
+
+.footerContent
+{
+    color: black;
+    font-weight: 600;
+    font-family: "Montserrat";
+    cursor: pointer;
+
+    margin-right: 12px;
+}
+
+.copyright
+{
+    display: block;
+    font-size: 12px;
+    cursor: default;
+}
