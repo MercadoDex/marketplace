@@ -12,7 +12,7 @@ export const products =
             name: "A Sombra do Vento",
             desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             date: "14/10/2022",
-            price: 0.1,
+            price: 12,
             image: sombraDoVento
         }
     ],

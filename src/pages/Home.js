@@ -1,14 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Card } from "antd";
+import { useLocation, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import "./Home.css";
-import videoCard from "../images/products/eletronics/videocard4090.png";
 import ProductCard from "../components/Card";
 import { products } from "../products";
 import Footer  from "../components/Footer";
 
 const Home = () => {
+  
   return (
     <>
       <div className="container">

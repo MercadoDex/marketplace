@@ -1,47 +1,48 @@
-import React from 'react';
-import { Rate } from 'antd';
+import React from "react";
+import { Rate } from "antd";
 import "./Product.css";
-import Header from '../components/Header';
-import { useLocation } from 'react-router';
-import Purchase from '../components/Purchase';
+import Header from "../components/Header";
+import { useLocation } from "react-router";
+import Purchase from "../components/Purchase";
+import Footer from "../components/Footer";
+
+
 const Product = () => {
-  
-  let {state: book} = useLocation();
+
+  const prodState = useLocation();
+  const product = prodState.state;
   return (
-  <>
-  <div className="container">
-    <Header />
-    <div className="product-content">
-      <div>
-        <div className="product-img">
-          <img src={book.image} alt="product" width="100%"></img>
+    <>
+      <div className="container">
+        <Header />
+        <div className="product-content">
+          <div>
+            <div className="product-img">
+              <img src={product.image} alt="product" width="100%"></img>
+            </div>
+            <p style={{ textAlign: "center" }}>Hover over image to zoom</p>
+          </div>
+          <div className="product-details">
+            <h1>{product.name}</h1>
+            {/* <Rate value={product.price} disabled={true}></Rate> */}
+            <hr></hr>
+            <p>
+              Preço:
+              <span className="price"> R${product.price}</span>
+            </p>
+            <p>No Import Fees & Free Shipping Included</p>
+            <hr></hr>
+            <h3>About This Item</h3>
+            <p>{product.desc}</p>
+          </div>
+          <div className="purchase-details">
+            <Purchase book={product} />
+          </div>
         </div>
-        <p style={{ textAlign: "center" }}>Hover over image to zoom</p>
+        <Footer />
       </div>
-      <div className="product-details">
-        <h1>{book.name}</h1>
-        <Rate value={book.rating} disabled={true}></Rate>
-        <hr></hr>
-        <p>
-          Price:
-          <span className="price"> ${book.price}</span>
-        </p>
-        <p>
-          No Import Fees & Free Shipping Included
-        </p>
-        <hr></hr>
-        <h3>About This Item</h3>
-        <p>
-          {book.about}
-        </p>
-      </div>
-      <div className="purchase-details">
-      <Purchase book={book}/>
-      </div>
-    </div>
-  </div>
-  </>
-)
-}
+    </>
+  );
+};
 
 export default Product;

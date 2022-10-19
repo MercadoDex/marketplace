@@ -1,38 +1,40 @@
-import {Select, Button, Modal, Input} from 'antd'
-import {ShoppingCartOutlined} from "@ant-design/icons";
-import { useState } from 'react';
-import { useMoralis } from 'react-moralis';
+import { Select, Button, Modal, Input } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
+import { useState } from "react";
+import { useMoralis } from "react-moralis";
 
-const {Option} = Select;
-function Purchase({book}) {
+const { Option } = Select;
+
+function Purchase(product) {
+  const { book } = product;
+  console.log(book);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [delivery, setDelivery] = useState("");
-  const {Moralis, account, chainId} = useMoralis();
+  const { Moralis, account, chainId } = useMoralis();
 
   const handleOk = async () => {
-
     // Get The Price of MATIC
 
     const options = {
       address: "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
-      chain: "eth"
+      chain: "eth",
     };
     const price = await Moralis.Web3API.token.getTokenPrice(options);
-    console.log(price)
+    console.log(price);
     const priceMatic = book.price / price.usdPrice;
-    
+
     // Send Matic to book store owenr address
 
     const options1 = {
-      type: "native", 
-      amount: Moralis.Units.ETH(priceMatic), 
-      receiver: "0x89EA8852a2c651fD792886d4dbA364A2af39401F"
-    }
-    let result = await Moralis.transfer(options1)
-    console.log("Send Matic to book store owenr address, options1:")
-    console.log(options1)
-    console.log("result:")
-    console.log(result)
+      type: "native",
+      amount: Moralis.Units.ETH(priceMatic),
+      receiver: "0x89EA8852a2c651fD792886d4dbA364A2af39401F",
+    };
+    let result = await Moralis.transfer(options1);
+    console.log("Send Matic to book store owenr address, options1:");
+    console.log(options1);
+    console.log("result:");
+    console.log(result);
 
     //Save Transaction Details to DB
     const Transaction = Moralis.Object.extend("Transaction");
@@ -42,12 +44,11 @@ function Purchase({book}) {
     transaction.set("Delivery", delivery);
     transaction.set("Product", book.name);
 
-    transaction.save()
+    transaction.save();
     setIsModalVisible(false);
     // criar novo modal com o resultado?
-    console.log(transaction)
-
-  }
+    console.log(transaction);
+  };
 
   return (
     <>
@@ -62,21 +63,21 @@ function Purchase({book}) {
         <Option value={4}>4</Option>
         <Option value={5}>5</Option>
       </Select>
-      {chainId === "0x13881" &&
-      <Button
-      className="login"
-      style={{ width: "100%", marginTop: "50px" }}
-      onClick={()=>setIsModalVisible(true)}
-    >
-      <ShoppingCartOutlined /> Buy Now
-    </Button>
-      }
-      
+      {chainId === "0x13881" && (
+        <Button
+          className="login"
+          style={{ width: "100%", marginTop: "50px" }}
+          onClick={() => setIsModalVisible(true)}
+        >
+          <ShoppingCartOutlined /> Buy Now
+        </Button>
+      )}
+
       <Modal
         title="Purchase Product"
         visible={isModalVisible}
         onOk={handleOk}
-        onCancel={()=>setIsModalVisible(false)}
+        onCancel={() => setIsModalVisible(false)}
       >
         <div style={{ display: "flex" }}>
           <img src={book.image} alt="product" style={{ width: "200px" }}></img>
@@ -84,12 +85,14 @@ function Purchase({book}) {
             <h3>{book.name}</h3>
             <h2>${book.price}</h2>
             <h4>Delivery Address</h4>
-            <Input onChange={(value) => setDelivery(value.target.value)}></Input>
+            <Input
+              onChange={(value) => setDelivery(value.target.value)}
+            ></Input>
           </div>
         </div>
       </Modal>
     </>
-  )
+  );
 }
 
-export default Purchase
+export default Purchase;
