@@ -4,7 +4,7 @@ module.exports = function override(config, env) {
         "fs": false,
         "tls": false,
         "net": false,
-        "http": require.resolve("stream-http"),
+        "http": false,
         "https": false,
         "zlib": false ,
         "path": false,
@@ -12,12 +12,6 @@ module.exports = function override(config, env) {
         "util": false,
         "crypto": false
     };
-    config.plugins.push(
-        new webpack.ProvidePlugin({
-            process: 'process/browser',
-            Buffer: ['buffer', 'Buffer'],
-        }),
-    );
-
+    
     return config;
 }
