@@ -1,18 +1,16 @@
 const webpack = require('webpack');
 module.exports = function override(config, env) {
     config.resolve.fallback = {
-        fs: false,
-        tls: false,
-        net: false,
-        path: false,
-        zlib: false,
-        http: false,
-        https: false,
-        stream: false,
-        crypto: false,
-        url: false,
-        os: false,
-        assert: false
+        "fs": false,
+        "tls": false,
+        "net": false,
+        "http": require.resolve("stream-http"),
+        "https": false,
+        "zlib": false ,
+        "path": require.resolve("path-browserify"),
+        "stream": require.resolve("stream-browserify"),
+        "util": require.resolve("util/"),
+        "crypto": false
     };
     config.plugins.push(
         new webpack.ProvidePlugin({
