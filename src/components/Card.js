@@ -28,13 +28,14 @@ export default function CardCreate(props) {
       <Card className="card">
         <Link to="/product/" className="cardElements" state={{name, desc, price, date, image}}>
           <h1 className="cardTitle">{name.toUpperCase()}</h1>
+          
           <img src={image} alt="" className="cardImg"></img>
           
           <span className="dateAnnounce">{date}</span>
 
           <span className="descProduct">{desc}</span>
 
-          <span className="priceProduct"> R${price} ~= { loading ? price : price} matic</span>
+          <span className="priceProduct"> ${price} ~= { loading ? price : price} matic</span>
         </Link>
       </Card>
     </>

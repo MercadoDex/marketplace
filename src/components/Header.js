@@ -12,7 +12,7 @@ import {
 
 const { Search } = Input;
 const categories = [
-  "Mais vendidos",
+  'Mais_vendidos',
   "Livros",
   "Eletrônicos",
   "Computadores",
@@ -50,12 +50,12 @@ const Header = () => {
               icon={<UserOutlined className="header-buttons" />}
             ></Button>
 
-            <Tooltip title={account ? (<span>{account.slice(0, 8)}...</span>) : "Not logged yet"}>
+            <Tooltip title={account ? (<span>{account.slice(0, 8)}...</span>) : "Faça login aqui!"}>
               <Button
                 key="2"
                 type="text"
                 icon={<WalletOutlined className="header-buttons" />}
-                onClick={() => authenticate()}
+                onClick={() => authenticate({signingMessage:"Assinatura para usar o Mercado DEX"})}
               ></Button>
             </Tooltip>
 

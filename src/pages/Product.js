@@ -20,19 +20,19 @@ const Product = () => {
             <div className="product-img">
               <img src={product.image} alt="product" width="100%"></img>
             </div>
-            <p style={{ textAlign: "center" }}>Hover over image to zoom</p>
+            <p style={{ textAlign: "center" }}>Passe o mouse sobre a imagem para ampliar</p>
           </div>
           <div className="product-details">
             <h1>{product.name}</h1>
-            {/* <Rate value={product.price} disabled={true}></Rate> */}
+            <Rate value={product.price} disabled={true}></Rate> 
             <hr></hr>
             <p>
               Preço:
-              <span className="price"> R${product.price}</span>
+              <span className="price"> ${product.price}</span>
             </p>
-            <p>No Import Fees & Free Shipping Included</p>
+            <p>Sem taxas e envio grátis</p>
             <hr></hr>
-            <h3>About This Item</h3>
+            <h3>Sobre o item</h3>
             <p>{product.desc}</p>
           </div>
           <div className="purchase-details">

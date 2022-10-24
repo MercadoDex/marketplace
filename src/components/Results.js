@@ -21,10 +21,10 @@ function Results({category, rating, priceMin, priceMax}) {
           <Rate value={e.rating} disabled={true}></Rate>
           <h2> ${e.price}</h2>
           <p>
-            Ships to Your Location
+            Enviamos para você
           </p>
           <Link to="/product" state={e} className="login">
-          Got to Product Page
+          Compre agora!
         </Link>
         </div>
       </div>

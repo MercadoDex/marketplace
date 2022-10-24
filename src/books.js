@@ -1,56 +1,167 @@
-import Spidey1 from "./images/spiderman1.png";
-import Spidey2 from "./images/spiderman2.png";
-import Spidey3 from "./images/spiderman3.png";
-import Spidey4 from "./images/spiderman4.png";
-import Dictionary from "./images/oxford.png";
+
+import BTCUlrich from "./images/BTCUlrich.png";
+import CryptoExplained from "./images/CryptoExplained.png";
+import CapaManual from "./images/CapaManual.png";
+import TrezorTNew from "./images/TrezorTNew.png";
+import Ledger from "./images/Ledger.png";
+import SafePal from "./images/SafePal.png";
+import x570 from "./images/products/eletronics/asusx570.png";
+import ramCorsair8gb from "./images/products/eletronics/corsairVengeance8gb.webp";
+import ryzen5600x from "./images/products/eletronics/ryzen5600x.jpg";
+import videoCard4090 from "./images/products/eletronics/videocard4090.png";
+import sombraDoVento from "./images/products/books/aSombraDoVento.jpg"
+
+
 
 export const books = {
-  Comics: [
+
+  Mais_vendidos: [
     {
-      name: "The Amazing Spiderman By Nick Spencer Vol. 1: Back To Basics (MARVEL ORIGINAL COMIC)",
+      name: "Guia",
+      price: 4.73,
+      rating: 1,
+      image: CapaManual,
+      desc:
+        "Neste livro,."
+    },
+    {
+      name: "Guia",
+      price: 4.73,
+      rating: 1,
+      image: CapaManual,
+      desc:
+        "Neste livro,."
+    },
+    {
+      name: "Guia",
+      price: 4.73,
+      rating: 1,
+      image: CapaManual,
+      desc:
+        "Neste livro,."
+    },
+  ],
+
+  Livros: [
+    {
+      name: "A Sombra do Vento",
+      price: 2.5,
+      rating: 3,
+      image: sombraDoVento,
+      desc: "Barcelona, 1945. Daniel Sempere acorda na noite de seu aniversário de onze anos e percebe que já não se lembra do rosto da falecida mãe. Para consolá-lo, o pai leva o menino pela primeira vez ao Cemitério dos Livros Esquecidos. É lá que Daniel descobre A sombra do vento, romance escrito por Julián Carax, que logo se torna seu autor favorito, sua obsessão. No entanto, quando começa a buscar outras obras do escritor, Daniel descobre que alguém anda destruindo sistematicamente todos os exemplares de todos os livros que Carax já publicou, e que o que tem nas mãos pode muito bem ser o último volume sobrevivente. Junto com seu amigo Fermín, Daniel percorre a cidade, adentrando as ruelas e os segredos mais obscuros de Barcelona. Anos se passam e sua investigação inocente se transforma em uma trama de mistério, magia, loucura e assassinato. E o destino de seu autor favorito de repente parece intimamente conectado ao dele."      
+    },
+    {
+    name: "Bitcoin - A moeda na era digital Capa comum – Edição padrão, 1 janeiro 2014",
+    price: 5.11,
+    rating: 4,
+    image: BTCUlrich,
+    desc:
+      "O Bitcoin é uma forma de dinheiro, assim como o real, dólar ou euro, com a diferença de ser puramente digital e não ser emitido por nenhum governo. O seu valor é determinado livremente pelos indivíduos no mercado. Você lembra como a internet e o e-mail revolucionaram a comunicação? Antes, para enviar uma mensagem a uma pessoa do outro lado da Terra, era necessário fazer isso pelos correios. Nada mais antiquado. Você dependia de um intermediário para, fisicamente, entregar uma mensagem. Pois é, retornar a essa realidade é inimaginável. O que o e-mail fez com a informação, o Bitcoin fará com o dinheiro. Com o Bitcoin você pode transferir fundos de A para B em qualquer parte do mundo sem jamais precisar confiar em um terceiro para essa simples tarefa. O Bitcoin é a maior inovação tecnológica desde a internet, é revolucionário, sem precedentes e tem o potencial de mudar o mundo de uma forma jamais vista. À moeda, ele é o futuro. Ao avanço da liberdade individual, é uma esperança e uma grata novidade."
+  },
+  {
+    name: "Crypto Explained: O guia completo para o empreendedor ter sucesso no novo mundo das criptomoedas.",
+    price: 3.41,
+    rating: 2,
+    image: CryptoExplained,
+    desc:
+      "Descubra do zero como iniciar no mundo das criptomoedas e o que precisa fazer para iniciar a fazer dinheiro usando as criptomoedas como Bitcoin, Ethereum, Binance, Cardano e tantas outras."
+  },
+  {
+    name: "Manual Descomplicado do Mundo Cripto - Tudo que Você Precisa Saber Para Investir e Lucrar Nesse Mercado!",
+    price: 8.9,
+    rating: 3,
+    image: CapaManual,
+    desc:
+      "O Manual Descomplicado do Mundo Cripto, é o livro que todo investidor ou futuro investidor desse mercado precisa ter consigo. Nele nós vamos do inicio desse mundo até como abrir sua carteira, investir nas melhores moedas e melhores jogos NFTs. Imagine começar a ter resultados com 3, 5 dias? É o que algumas clientes estão tendo, mas não gostamos só de falar e sim mostrar e te ajudar a também chegar no seu resultado. O fato é que quando você iniciar em nosso manual, sua mente e intuições irão se transformar nos primeiros dias, Faça como tantos outros e aprenda a viver desse novo Mercado Digital."
+  },
+  ],
+  Eletrônicos: [
+    {
+    name: "Ledger Nano S Hardware Wallet",
+    price: 85.18,
+    rating: 3,
+    image: Ledger,
+    desc:
+      "Ledger Nano S é uma carteira de hardware Bitcoin, Ethereum e Altcoins, com base em recursos de segurança robustos para armazenamento de ativos criptográficos e garantia de pagamentos digitais. Ele se conecta a qualquer computador (USB) e incorpora uma tela OLED segura para verificar e confirmar cada transação com um toque em seus botões laterais."
+  },
+  {
+    name: "Trezor T Wallet",
+    price: 93.13,
+    rating: 4,
+    image: TrezorTNew,
+    desc:
+      "O Trezor T suporta mais de 1.600 criptomoedas, incluindo Bitcoin, Ethereum, ADA e XRP, permitindo que você gerencie vários ativos com a mesma carteira de hardware.."
+  },
+  {
+    name: "SafePal S1 Wallet",
+    price: 97.63,
+    rating: 5,
+    image: SafePal,
+    desc:
+      "Carteira de hardware SafePal S1 criptomoeda, armazenamento frio sem fio para bitcoin, Ethereum e mais tokens, Internet isolada e 100% offline, armazena com segurança chaves privadas, sementes e ativos de criptografia."
+  },
+  ],
+  Computadores: [
+    {
+      name: "Asus x570",
+      price: 0.1,
+      rating: 2,
+      image: x570,
+      desc:
+        "Asus x570."
+    },
+    {
+      name: "Memoria Ram Corsair 8gb",
       price: 0.1,
       rating: 4,
-      image: Spidey1,
-      about:
-        "An alien invasion attacks New York City and the only one who can stop it is...Spider-Man?! But that's far from all you'll find here - a revelation from the past puts Peter Parker's job, relationships and whole life in jeopardy! And if even that's not enough, you'll see a new roommate, new love interests and a new villain!",
+      image: ramCorsair8gb,
+      desc:
+        "Memoria Ram Corsair 8gb."
     },
     {
-      name: "The Amazing Spiderman By Nick Spencer Vol. 2: Friends And Foes (MARVEL ORIGINAL COMIC)",
-      price: 19.99,
-      rating: 5,
-      image: Spidey2,
-      about:
-        "Wondering when Boomerang's status as Spider-Man's roommate would blow up? Well, the time has come and it's all here in this continuation of Nick Spencer's action-packed take on everybody's favorite web-head!",
-    },
-    {
-      name: "The Amazing Spiderman By Nick Spencer Vol. 3: Lifetime Achievement (MARVEL ORIGINAL COMIC)",
-      price: 2.99,
-      rating: 1,
-      image: Spidey3,
-      about:
-        "J. Jonah Jameson, former publisher of the Daily Bugle, former mayor of New York City, has a new job - as a shock jock! It's the perfect job for the outspoken Jonah, but is the world ready for a JJJ who's...pro-Spider-Man?! More importantly, is Peter Parker ready? ",
-    },
-    {
-      name: "The Amazing Spiderman By Nick Spencer Vol. 4: Hunted (MARVEL ORIGINAL COMIC)",
-      price: 8.99,
+      name: "AMD Ryzen 5600x",
+      price: 0.1,
       rating: 3,
-      image: Spidey4,
-      about:
-        "When Kraven returns, Spider-Man becomes the hunted! Sergei Kravinoff and his minions have been kidnapping animal-themed superhumans for months, and they need one more to complete the collection: the Spider. But what does Kraven want with all of them?! In Central Park, the prey is let loose, and the hunt begins - but Kraven isn't the one in pursuit. Who has Spidey in their crosshairs?",
+      image: ryzen5600x,
+      desc:
+        "AMD Ryzen 5600x."
     },
-  ],
-  Dictionaries: [
     {
-      name: "Oxford English Dictionary (3rd Edition)",
-      price: 65.29,
-      rating: 5,
-      image: Dictionary,
-      about:
-        "The foremost single volume authority on the English language, the Oxford Dictionary of English is at the forefront of language research, focusing on English as it is used today. It is informed by the most up-to-date evidence from the largest language research programme in the world, including the two-billion-word Oxford English Corpus."
+      name: "RTX 4090Ti",
+      price: 0.1,
+      rating: 1,
+      image: videoCard4090,
+      desc:
+        "RTX 4090Ti."
     },
   ],
-  Novels: [],
-  Fantasy: [],
-  Horror: [],
-  Adventure: [],
+
+
+
+  Criptos: [
+    {
+      name: "Guia",
+      price: 4.73,
+      rating: 1,
+      image: CapaManual,
+      about:
+        "Neste livro,."
+    },
+    {
+      name: "Guia",
+      price: 4.73,
+      rating: 1,
+      image: CapaManual,
+      about:
+        "Neste livro,."
+    },
+    {
+      name: "Guia",
+      price: 4.73,
+      rating: 1,
+      image: CapaManual,
+      about:
+        "Neste livro,."
+    },
+  ],
 };

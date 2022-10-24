@@ -20,7 +20,7 @@ const Categories = () => {
       <div className="container">
         <Header />
         <div className="results-header">
-          <span>Showing Poducts for </span>
+          <span>Mostrando produtos da categoria </span>
           <span className="category">"{category}"</span>
         </div>
 
@@ -29,7 +29,7 @@ const Categories = () => {
             <div style={{ display: "flex", flexDirection: "column" }}>
             <Rating rating={rating} setRating={setRating} />
             <PriceRanges priceMin={priceMin} setPriceMin={setPriceMin} priceMax={priceMax} setPriceMax={setPriceMax}/>
-            <Button className="login">Apply Filters</Button>
+            <Button className="login">Aplicar Filtros</Button>
             </div>
           </Sider>
 
@@ -37,7 +37,7 @@ const Categories = () => {
             theme="light"
             style={{ padding: "35px", backgroundColor: "white" }}
           >
-            <h1 style={{fontSize:"30px"}}>RESULTS</h1>
+            <h1 style={{fontSize:"30px"}}>RESULTADOS</h1>
             <Results category={category} rating={rating} priceMin={priceMin} priceMax={priceMax}/>
           </Content>
         </Layout>

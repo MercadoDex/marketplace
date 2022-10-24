@@ -10,41 +10,42 @@ export const products =
     [
         {
             name: "A Sombra do Vento",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             date: "14/10/2022",
-            price: 12,
-            image: sombraDoVento
+            price: 2.5,
+            image: sombraDoVento,
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         }
     ],
     eletronics:
     [
         {
             name: "Asus x570",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             date: "03/02/2022",
             price: 0.1,
-            image: x570
+            image: x570,
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         },
         {
             name: "Memoria Ram Corsair 8gb",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             date: "28/05/2022",
             price: 0.1,
-            image: ramCorsair8gb
+            image: ramCorsair8gb,
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            
         },
         {
-            name: "AMD Ryzen 5600x",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            name: "AMD Ryzen 5600x",            
             date: "17/09/2022",
             price: 0.1,
-            image: ryzen5600x
+            image: ryzen5600x,
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         },
         {
-            name: "RTX 4090Ti",
-            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            name: "RTX 4090Ti",            
             date: "19/10/2022",
             price: 0.1,
-            image: videoCard4090
+            image: videoCard4090,
+            desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         },
     ]
 }

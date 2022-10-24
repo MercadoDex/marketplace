@@ -4,7 +4,7 @@ function Rating({rating, setRating}) {
   return (
     <>
     <h2>
-        Customer Reviews
+        Avaliações de Clientes
     </h2>
     <Radio.Group value={rating} onChange={(value)=> setRating(value.target.value)}>
         <Space direction="vertical">
