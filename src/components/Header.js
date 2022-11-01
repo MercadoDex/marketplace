@@ -11,20 +11,29 @@ import {
 } from "@ant-design/icons";
 
 const { Search } = Input;
-const categories = [
-  "Mais Vendidos",
-  "Livros",
-  "Eletrônicos",
-  "Computadores",
-  "Games",
-  "Brinquedos",
-  "Automotivo",
-  "Petshop",
-  "Casa",
-  "Eletrodomesticos",
-  "Usados",
+const categories = {
+  mostSold: "Mais Vendidos",
+  books: "Livros",
+  eletronics: "Eletrônicos",
+  computers: "Computadores",
+  games: "Games",
+  toys: "Brinquedos",
+  petshop: "Petshop",
+  home: "Casa",
+  electroDomestics: "Eletrodomesticos",
+  used: "Usados",
+};
 
-];
+const headerElements = [];
+
+for (const [key, value] of Object.entries(categories)) 
+{
+  headerElements.push(
+    <Link to="/categories" key={key} state={key} className="categories">
+      {value}
+    </Link>
+  );
+};
 
 const Header = () => {
   const { authenticate, account } = useMoralis();
@@ -35,7 +44,7 @@ const Header = () => {
         extra={[
           <>
             <Link to="/">
-            <img src={MdLogo} className="logo" ></img>
+              <img src={MdLogo} alt="Logo MercadoDex" className="logo"></img>
             </Link>
             <Search
               size="large"
@@ -50,12 +59,24 @@ const Header = () => {
               icon={<UserOutlined className="header-buttons" />}
             ></Button>
 
-            <Tooltip title={account ? (<span>{account.slice(0, 8)}...</span>) : "Faça login aqui!"}>
+            <Tooltip
+              title={
+                account ? (
+                  <span>{account.slice(0, 8)}...</span>
+                ) : (
+                  "Faça login aqui!"
+                )
+              }
+            >
               <Button
                 key="2"
                 type="text"
                 icon={<WalletOutlined className="header-buttons" />}
-                onClick={() => authenticate({signingMessage:"Assinatura para usar o Mercado DEX"})}
+                onClick={() =>
+                  authenticate({
+                    signingMessage: "Assinatura para usar o Mercado DEX",
+                  })
+                }
               ></Button>
             </Tooltip>
 
@@ -70,17 +91,13 @@ const Header = () => {
 
       <div className="site-page-subheader-ghost-wrapper">
         <Space size={"large"}>
-          <Space style={{ fontWeight: "600", fontSize: "18px", cursor: "pointer" }}>
+          <Space
+            style={{ fontWeight: "600", fontSize: "18px", cursor: "pointer" }}
+          >
             <MenuOutlined />
             Categorias
           </Space>
-          {categories.map((e) => {
-            return (
-              <Link to="/categories" state={e} className="categories">
-                {e}
-              </Link>
-            );
-          })}
+          {headerElements.map((element) => (element))}
         </Space>
       </div>
     </div>

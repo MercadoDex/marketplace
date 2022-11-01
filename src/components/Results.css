@@ -1,5 +1,56 @@
-.title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+.title 
+{
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+}
+
+.cardCategoryContainer
+{
+  display: flex;
+}
+
+.imageCardCategory
+{
+  width: 300px;
+}
+
+.cardCategoryContentContainer
+{
+  margin-left: 10px;
+}
+
+.priceCardCategory
+{
+  color: black;
+  font-weight: 500;
+  font-size: 25px;
+  display: block;
+}
+
+.descCardCategory
+{
+  font-size: 16px;
+}
+
+.sendCardCategory
+{
+  display: block;
+  margin: 10px 0;
+}
+
+.btnBuyCardCategory
+{
+  background-color: #FFF159;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  color: black;
+  font-weight: 700;
+}
+
+.btnBuyCardCategory:hover
+{
+  cursor: pointer;
+  color: rgb(26, 1, 134);
+}

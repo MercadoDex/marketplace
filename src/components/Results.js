@@ -1,38 +1,45 @@
-import {Card, Rate} from 'antd';
-import { Link } from 'react-router-dom';
+import { Card, Rate } from "antd";
+import { Link } from "react-router-dom";
 import "./Results.css";
 import { products } from "../products.js";
 
-function Results({category, rating, priceMin, priceMax}) {
+function Results({ category, rating, priceMin, priceMax }) {
+  let filteredProduct = {};
+  products.forEach((e) => {
+    if (Object.keys(e) == category) filteredProduct = e;
+  });
+  const productCategoryFiltered = filteredProduct[category]
+    .filter((x) => x.rating >= rating)
+    .filter((x) => x.price > priceMin)
+    .filter((x) => x.price <= priceMax);
 
- const bookCategory = products[category].filter(x => x.rating >= rating).filter(x => x.price > priceMin).filter(x => x.price <= priceMax);
-    console.log(bookCategory);
   return (
     <>
-  {bookCategory.map((e,i) => {
-    return (
-      <Card>
-      <div style={{ display: "flex" }}>
-        <img src={e.image} alt={i} width="300px"></img>
-        <div>
-          <p className="title">
-            {e.name}
-          </p>
-          <Rate value={e.rating} disabled={true}></Rate>
-          <h2> ${e.price}</h2>
-          <p>
-            Enviamos para você
-          </p>
-          <Link to="/product" state={e} className="login">
-          Compre agora!
-        </Link>
-        </div>
-      </div>
-    </Card>
-    );
-  })}
-  </>
-  )
+      {productCategoryFiltered.map((e, i) => {
+        return (
+          <Card>
+            <div className="cardCategoryContainer" key={i}>
+              <img
+                src={e.image}
+                alt={e.name}
+                className="imageCardCategory"
+              ></img>
+              <div className="cardCategoryContentContainer">
+                <h1 className="title">{e.name}</h1>
+                <Rate value={e.rating} disabled={true}></Rate>
+                <span className="priceCardCategory"> R${e.price}</span>
+                <span className="descCardCategory">{e.desc}</span>
+                <span className="sendCardCategory">Enviamos para você</span>
+                <Link to="/product" state={e} className="buyBtnCardCategory">
+                  <button className="btnBuyCardCategory">Compre agora!</button>
+                </Link>
+              </div>
+            </div>
+          </Card>
+        );
+      })}
+    </>
+  );
 }
 
-export default Results
+export default Results;

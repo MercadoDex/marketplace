@@ -28,7 +28,7 @@ export default function CardCreate({ props }) {
 
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-  let maticToReal = 0;
+  
   useEffect(() => {
     (async function () {
       const req = await axios.get(

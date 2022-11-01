@@ -24,7 +24,7 @@ const Product = () => {
           </div>
           <div className="product-details">
             <h1>{product.name}</h1>
-            <Rate value={product.price} disabled={true}></Rate> 
+            <Rate value={product.rating} disabled={true}></Rate> 
             <hr></hr>
             <p>
               Preço:
