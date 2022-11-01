@@ -52,7 +52,7 @@ function Purchase(product) {
 
   return (
     <>
-      <span className="price"> ${book.price}</span>
+      <span className="price"> R${book.price} ~= {(book.price/book.maticReal).toFixed(3)} MATIC</span>
       <p>Sem taxas e envio grátis</p>
       <h1 style={{ color: "green" }}> Em estoque </h1>
       <h3>Quantidade</h3>

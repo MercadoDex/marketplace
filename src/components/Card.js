@@ -5,7 +5,6 @@ import "./Card.css";
 import axios from "axios";
 
 export default function CardCreate({ props }) {
-
   const typeFilter = props[1];
   const products = props[0];
 
@@ -29,7 +28,7 @@ export default function CardCreate({ props }) {
 
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
-
+  let maticToReal = 0;
   useEffect(() => {
     (async function () {
       const req = await axios.get(
@@ -46,10 +45,27 @@ export default function CardCreate({ props }) {
       {filteredOffers.map((filteredProd) => {
         return (
           <Card className="card" key={filteredOffers.name}>
-            <Link to="/product/" className="cardElements" state={{}}>
-              <h1 className="cardTitle">{filteredProd.name.slice(0,34).toUpperCase()}</h1>
+            <Link
+              to="/product/"
+              className="cardElements"
+              state={{
+                name: filteredProd.name,
+                price: filteredProd.price,
+                image: filteredProd.image,
+                desc: filteredProd.desc,
+                rating: filteredProd.rating,
+                maticReal: data,
+              }}
+            >
+              <h1 className="cardTitle">
+                {filteredProd.name.slice(0, 34).toUpperCase()}
+              </h1>
 
-              <img src={filteredProd.image} alt={`${filteredProd.name}`} className="cardImg"></img>
+              <img
+                src={filteredProd.image}
+                alt={`${filteredProd.name}`}
+                className="cardImg"
+              ></img>
 
               <Rate
                 className="rateProduct"
@@ -58,11 +74,17 @@ export default function CardCreate({ props }) {
               ></Rate>
 
               <span className="descProduct">
-                {filteredProd.desc?.slice(0, 100)}...
+                {filteredProd.desc.length >= 100
+                  ? filteredProd.desc.slice(0, 100) + "..."
+                  : filteredProd.desc}
               </span>
 
               <span className="priceProduct">
-                R${filteredProd.price} ~= {loading ? filteredProd.price : (filteredProd.price/data).toFixed(3)} MATIC
+                R${filteredProd.price} ~={" "}
+                {loading
+                  ? "Loading..."
+                  : (filteredProd.price / data).toFixed(3)}{" "}
+                MATIC
               </span>
             </Link>
           </Card>

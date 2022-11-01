@@ -28,7 +28,7 @@ const Product = () => {
             <hr></hr>
             <p>
               Preço:
-              <span className="price"> ${product.price}</span>
+              <span className="price"> R${product.price}</span>
             </p>
             <p>Sem taxas e envio grátis</p>
             <hr></hr>
