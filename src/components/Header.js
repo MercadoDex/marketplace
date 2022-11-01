@@ -12,7 +12,7 @@ import {
 
 const { Search } = Input;
 const categories = [
-  'Mais_vendidos',
+  "Mais Vendidos",
   "Livros",
   "Eletrônicos",
   "Computadores",
