@@ -35,7 +35,7 @@ export default function CardCreate({ props }) {
       const req = await axios.get(
         "https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=brl"
       );
-      setData(req.data);
+      setData(req.data["matic-network"].brl);
     })();
   }, []);
 
@@ -62,8 +62,7 @@ export default function CardCreate({ props }) {
               </span>
 
               <span className="priceProduct">
-                {" "}
-                R${filteredProd.price} ~= {loading ? filteredProd.price : (filteredProd.price/data["matic-network"]?.brl).toFixed(3)} MATIC
+                R${filteredProd.price} ~= {loading ? filteredProd.price : (filteredProd.price/data).toFixed(3)} MATIC
               </span>
             </Link>
           </Card>
