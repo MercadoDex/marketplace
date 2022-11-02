@@ -17,7 +17,6 @@ function PriceContextProvider(props) {
         }, []);
 
   useEffect(() => setLoading(false), [data]);
-  console.log(data)
   return (
     <PriceContext.Provider value={{data, loading}}>
         {props.children}
