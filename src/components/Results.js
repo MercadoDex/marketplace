@@ -1,9 +1,15 @@
 import { Card, Rate } from "antd";
 import { Link } from "react-router-dom";
-import "./Results.css";
 import { products } from "../products.js";
+import { useContext } from "react";
+import { PriceContext } from "../contexts/MaticToReal";
+import "./Results.css";
 
 function Results({ category, rating, priceMin, priceMax }) {
+  // Coletando informações globais
+
+  const { data, loading } = useContext(PriceContext);
+
   let filteredProduct = {};
   products.forEach((e) => {
     if (Object.keys(e) == category) filteredProduct = e;
@@ -27,7 +33,9 @@ function Results({ category, rating, priceMin, priceMax }) {
               <div className="cardCategoryContentContainer">
                 <h1 className="title">{e.name}</h1>
                 <Rate value={e.rating} disabled={true}></Rate>
-                <span className="priceCardCategory"> R${e.price}</span>
+                <span className="priceCardCategory">
+                  R${e.price} ~= {loading ? "Loading..." : (e.price / data).toFixed(3)} MATIC
+                </span>
                 <span className="descCardCategory">{e.desc}</span>
                 <span className="sendCardCategory">Enviamos para você</span>
                 <Link to="/product" state={e} className="buyBtnCardCategory">

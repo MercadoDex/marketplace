@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { PriceContext } from "../contexts/MaticToReal";
 import { Link } from "react-router-dom";
 import { Card, Rate } from "antd";
 import "./Card.css";
 import axios from "axios";
 
 export default function CardCreate({ props }) {
+  
+  const { data, loading } = useContext(PriceContext);
+  
+  //Filtrando produtos que estejam em promoção e outros que são as ofertas
   const typeFilter = props[1];
   const products = props[0];
 
@@ -25,20 +30,6 @@ export default function CardCreate({ props }) {
     const offer = filterOffer(product, typeFilter);
     filteredOffers.push(...offer);
   });
-
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState(null);
-  
-  useEffect(() => {
-    (async function () {
-      const req = await axios.get(
-        "https://api.coingecko.com/api/v3/simple/price?ids=matic-network&vs_currencies=brl"
-      );
-      setData(req.data["matic-network"].brl);
-    })();
-  }, []);
-
-  useEffect(() => setLoading(false), [data]);
 
   return (
     <>

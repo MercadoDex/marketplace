@@ -1,11 +1,15 @@
 import { Select, Button, Modal, Input } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useMoralis } from "react-moralis";
+import { PriceContext } from "../contexts/MaticToReal";
 
 const { Option } = Select;
 
 function Purchase(product) {
+
+  const { data, loading } = useContext(PriceContext);
+
   const { book } = product;
   console.log(book);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -21,7 +25,7 @@ function Purchase(product) {
     };
     const price = await Moralis.Web3API.token.getTokenPrice(options);
     console.log(price);
-    const priceMatic = book.price / price.usdPrice;
+    const priceMatic = book.price / data;
 
     // Send Matic to book store owenr address
 
@@ -52,7 +56,7 @@ function Purchase(product) {
 
   return (
     <>
-      <span className="price"> R${book.price} ~= {(book.price/book.maticReal).toFixed(3)} MATIC</span>
+      <span className="price"> R${book.price} ~= {(book.price/data).toFixed(3)} MATIC</span>
       <p>Sem taxas e envio grátis</p>
       <h1 style={{ color: "green" }}> Em estoque </h1>
       <h3>Quantidade</h3>
@@ -79,11 +83,11 @@ function Purchase(product) {
         onOk={handleOk}
         onCancel={() => setIsModalVisible(false)}
       >
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent:"space-evenly" }}>
           <img src={book.image} alt="product" style={{ width: "200px" }}></img>
           <div>
             <h3>{book.name}</h3>
-            <h2>${book.price}</h2>
+            <h2>{(book.price/data).toFixed(3)} MATIC</h2>
             <h4>E-mail de Entrega</h4>
             <Input
               onChange={(value) => setDelivery(value.target.value)}
